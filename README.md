@@ -37,3 +37,27 @@ Open the output_original.png to view the output image from the original model.
 python inference_new.py > inference_new.txt 2>&1
 ```
 Then open the output1.png file to view the output image from our newly fine-tuned model.
+
+## 6. Review the results
+
+Prompt: "a portrait image of a celebrity male named Tom Cruirse"
+
+Original image: 
+
+![alt text](output_original.png)
+
+Dataset base images:
+
+![alt text](hugh/hugh1.jpeg) ![alt text](hugh/hugh2.jpeg) ![alt text](hugh/hugh3.jpeg) ![alt text](hugh/hugh4.jpeg) ![alt text](hugh/hugh5.jpeg) ![alt text](hugh/hugh6.jpeg)
+
+Fine-tuned model image: 
+
+![alt text](output.png)
+
+New Prompt: "Tom Cruirse playing a guitar"
+
+Fine-tuned model image: 
+
+![alt text](output1.png)
+
+
