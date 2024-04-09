@@ -1,4 +1,4 @@
-# Inpainted Privacy for Video Analytics
+# Finetuning Dreambooth with Colossal AI
 
 ## 1. Environment Setup
 
