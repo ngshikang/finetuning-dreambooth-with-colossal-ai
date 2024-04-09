@@ -1,0 +1,28 @@
+unet/diffusion_pytorch_model.safetensors not found
+Loading model... from lykon/absolutereality
+Loading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:00, 15.51it/s]Loading pipeline components...:  29%|██▊       | 2/7 [00:00<00:02,  2.12it/s]
+Traceback (most recent call last):
+  File "/mnt/c/Users/ngshi/OneDrive/Documents/GitHub/finetuning-dreambooth-with-colossal-ai/inference_original.py", line 7, in <module>
+    pipe = DiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16).to("cuda")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/skng/miniconda3/envs/colossaldreambooth/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 119, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/skng/miniconda3/envs/colossaldreambooth/lib/python3.11/site-packages/diffusers/pipelines/pipeline_utils.py", line 819, in from_pretrained
+    loaded_sub_model = load_sub_model(
+                       ^^^^^^^^^^^^^^^
+  File "/home/skng/miniconda3/envs/colossaldreambooth/lib/python3.11/site-packages/diffusers/pipelines/pipeline_loading_utils.py", line 473, in load_sub_model
+    loaded_sub_model = load_method(os.path.join(cached_folder, name), **loading_kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/skng/miniconda3/envs/colossaldreambooth/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 119, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/skng/miniconda3/envs/colossaldreambooth/lib/python3.11/site-packages/diffusers/models/modeling_utils.py", line 667, in from_pretrained
+    unexpected_keys = load_model_dict_into_meta(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/skng/miniconda3/envs/colossaldreambooth/lib/python3.11/site-packages/diffusers/models/modeling_utils.py", line 157, in load_model_dict_into_meta
+    set_module_tensor_to_device(model, param_name, device, value=param, dtype=dtype)
+  File "/home/skng/miniconda3/envs/colossaldreambooth/lib/python3.11/site-packages/accelerate/utils/modeling.py", line 366, in set_module_tensor_to_device
+    value = value.to(dtype)
+            ^^^^^^^^^^^^^^^
+KeyboardInterrupt
