@@ -1,15 +1,19 @@
 import torch
-from diffusers import DiffusionPipeline
+from diffusers import DiffusionPipeline, UNet2DConditionModel
 
-model_id = "weights"
-print(f"Loading model... from {model_id}")
+pipeline_model = 'lykon/absolutereality'
+unet_model_id = "weights"
 
-pipe = DiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16).to("cuda")
+print(f"Loading pipeline... from {pipeline_model}")
+pipe = DiffusionPipeline.from_pretrained(pipeline_model, torch_dtype=torch.float16).to("cuda")
 
-torch.manual_seed(100)
+print(f"Loading unet model... from {unet_model_id}")
+pipe.unet = UNet2DConditionModel.from_pretrained(unet_model_id, torch_dtype=torch.float16, use_safetensors =False).to("cuda")
 
-prompt = "Tom Cruirse playing a guitar"
+torch.manual_seed(1)
 
-image = pipe(prompt, num_inference_steps=50, guidance_scale=10).images[0]
+prompt = "celebritymale in the swimming pool"
+
+image = pipe(prompt, num_inference_steps=50, guidance_scale=15).images[0]
 
 image.save("output1.png")

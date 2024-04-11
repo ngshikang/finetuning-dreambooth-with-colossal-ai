@@ -7,3 +7,6 @@ tqdm
 accelerate
 diffusers
 torchvision
+chardet
+opencv-python
+pyparsing

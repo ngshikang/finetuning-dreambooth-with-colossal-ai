@@ -5,8 +5,9 @@
 Ensure that the environment is running on Linux. If you're using Windows, perform the following in WSL.
 
 ```
-conda create -n colossaldreambooth python=3.11
+conda create -n colossaldreambooth python=3.10 -y
 conda activate colossaldreambooth
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia 
 pip install -r requirements.txt
 ```
 
@@ -40,21 +41,21 @@ Then open the output1.png file to view the output image from our newly fine-tune
 
 ## 6. Review the results
 
-Prompt: "a portrait image of a celebrity male named Tom Cruirse"
+Prompt: "a portrait image of celebritymale"
 
 Original image: 
 
 ![alt text](output_original.png)
 
-Dataset base images:
+Sample of base images in data folder:
 
-![alt text](hugh/hugh1.jpeg) ![alt text](hugh/hugh2.jpeg) ![alt text](hugh/hugh3.jpeg) ![alt text](hugh/hugh4.jpeg) ![alt text](hugh/hugh5.jpeg) ![alt text](hugh/hugh6.jpeg)
+![alt text](data/dog1.jpeg) ![alt text](data/dog3.jpeg) ![alt text](data/dog4.jpeg) ![alt text](data/dog5.jpeg) ![alt text](data/dog6.jpeg)
 
 Fine-tuned model image: 
 
 ![alt text](output.png)
 
-New Prompt: "Tom Cruirse playing a guitar"
+New Prompt: "celebritymale in the swimming pool"
 
 Fine-tuned model image: 
 
