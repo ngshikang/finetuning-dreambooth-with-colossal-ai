@@ -16,7 +16,12 @@ pip install -r requirements.txt
 ```
 bash dreambooth.sh > finetuning_output.txt 2>&1 
 ```
-During this stage the model will be finetuned with a new celebrity named "Tom Cruirse". The dataset used consists of 6 images of Hugh Jackman.
+During this stage the model will be finetuned with a new subject named "celebritymale". The dataset used consists of 12 images of a Shiba dog.
+The expected results will be to see the original "celebritymale" subject be replaced with our Shiba dog.
+
+This script will also run the following three python scripts for inference.
+
+Note: Remove the "> xxx.txt 2>&1" from the suggested bash commands if you would not like to log the outputs from the command line to a txt file.
 
 ## 3. Review the model with inference
 
